@@ -19,10 +19,4 @@ resource "aws_launch_configuration" "asg_lc" {
                   #!/bin/bash
                   echo "Hello, World!" > /tmp/hello.txt
                   EOF
-
-    tag {
-     key                 = "Name"
-     value               = "example-asg"
-     propagate_at_launch = true
-  }
 }   
