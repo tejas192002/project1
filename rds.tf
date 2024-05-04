@@ -12,7 +12,7 @@ resource "aws_db_instance" "db" {
   instance_class         = "db.t2.micro"
   allocated_storage      = 20
   engine                 = "mysql"
-  name                   = "database"
+  db_name                = "database"
   password               = "123456789"
   username               = "tejas"
   engine_version         = "5.6.40"

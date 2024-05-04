@@ -18,7 +18,6 @@ resource "aws_internet_gateway" "igw" {
 
 resource "aws_eip" "nat_eip" {
     vpc    = true
-    region = "us-east-1"
 }
 
 resource "aws_nat_gateway" "nat" {
