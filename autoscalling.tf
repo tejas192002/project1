@@ -7,13 +7,6 @@ resource "aws_autoscaling_group" "asg" {
   vpc_zone_identifier       = [aws_subnet.private_subnet.id] 
   health_check_type         = "EC2"
   health_check_grace_period = 300
-  tags = [
-    {
-      key                 = "Name"
-      value               = "example-asg"
-      propagate_at_launch = true
-    }
-  ]
 }
 
 resource "aws_launch_configuration" "asg_lc" {
@@ -26,4 +19,10 @@ resource "aws_launch_configuration" "asg_lc" {
                   #!/bin/bash
                   echo "Hello, World!" > /tmp/hello.txt
                   EOF
-}
+
+    tag {
+     key                 = "Name"
+     value               = "example-asg"
+     propagate_at_launch = true
+  }
+}   
